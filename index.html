@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Custom Website</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="slideshow">
+            <div class="slide" style="background-image: url('static/img/cld4.jpg');"></div>
+            <div class="slide" style="background-image: url('static/img/cld2.jpg');"></div>
+            <div class="slide" style="background-image: url('static/img/cld3.jpg');"></div>
+            <div class="slide" style="background-image: url('static/img/cld1.jpg');"></div>
+        </div>
+        <nav class="nav bd-grid">
+            <div>
+                <a href="#" class="nav__logo">@CloudInsights</a>
+            </div>
+            <div class="navbar">
+                <ul>
+                    <li><a class="active" href="/">Home</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="center">
+            <h1>Cloudscapes: Decoding Cloud Types and Predicting Weather</h1>
+            <h2>Explore Cloud Types, Predict Weather Patterns, and Dive into Atmospheric Wonders</h2>
+            <div class="buttons">
+                <form id="uploadForm" enctype="multipart/form-data">
+                    <input type="file" name="cloudImage" id="cloudImage" accept="image/*" required>
+                    <button type="submit" id="submitBtn">Submit</button>
+                </form>
+            </div>
+            <div id="predictionResults"></div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('uploadForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            
+            let formData = new FormData();
+            formData.append('cloudImage', document.getElementById('cloudImage').files[0]);
+            
+            let response = await fetch('/upload', {
+                method: 'POST',
+                body: formData
+            });
+            
+            let result = await response.json();
+            displayPredictionResult(result);
+        });
+
+        function displayPredictionResult(result) {
+            let predictionResults = document.getElementById('predictionResults');
+            let footer = document.querySelector('.footer');
+            
+            if (result.error) {
+                predictionResults.innerHTML = `<p>Error: ${result.error}</p>`;
+            } else {
+                predictionResults.innerHTML = `
+                    <h3>Predicted Cloud Type: ${result.cloud_type}</h3>
+                    <p>Weather Information:</p>
+                    <ul>
+                        <li><span class="heading">Name of the Cloud:</span> <span class="description">${result['Name of the Cloud']}</span></li>
+                        <li><span class="heading">Filename:</span> <span class="description">${result.filename}</span></li>
+                        <li><span class="heading">Probability of Precipitation (PoP):</span> <span class="description">${result['Probability of Precipitation (PoP)']}</span></li>
+                        <li><span class="heading">Expected Rainfall:</span> <span class="description">${result['Expected Rainfall']}</span></li>
+                        <li><span class="heading">Relative Humidity:</span> <span class="description">${result['Relative Humidity']}</span></li>
+                        <li><span class="heading">Wind Speed:</span> <span class="description">${result['Wind Speed']}</span></li>
+                        <li><span class="heading">Temperature:</span> <span class="description">${result['Temperature']}</span></li>
+                        <li><span class="heading">Altitude:</span> <span class="description">${result['Altitude']}</span></li>
+                        <li><span class="heading">Indicates:</span> <span class="description">${result['Indicates']}</span></li>
+                        <li><span class="heading">Sky Coverage:</span> <span class="description">${result['Sky Coverage']}</span></li>
+                        <li><span class="heading">Rainfall Onset Time:</span> <span class="description">${result['Rainfall Onset Time']}</span></li>
+                        <li><span class="heading">Duration of Rainfall:</span> <span class="description">${result['Duration of Rainfall']}</span></li>
+                        <li><span class="heading">Rainfall Intensity:</span> <span class="description">${result['Rainfall Intensity']}</span></li>
+                        <li><span class="heading">Future Weather Trends:</span> <span class="description">${result['Future Weather Trends']}</span></li>
+                        <li><span class="heading">Cloud Movement Analysis:</span> <span class="description">${result['Cloud Movement Analysis']}</span></li>
+                        <li><span class="heading">Description:</span> <span class="description">${result['Description']}</span></li>
+                        <li><span class="heading">Formation:</span> <span class="description">${result['Formation']}</span></li>
+                        <li><span class="heading">Activity Suggestions:</span> <span class="description">${result['Activity Suggestions']}</span></li>
+                        <li><span class="heading">Type of Rain Droplets:</span> <span class="description">${result['Type of Rain Droplets']}</span></li>
+                    </ul>
+                `;
+                predictionResults.classList.add('visible'); // Add visible class to display the background
+                footer.style.display = 'none'; // Hide the footer
+            }
+        }
+    </script>
+
+    <footer class="footer">
+        <p class="footer__title">Boda Kalyan Singh</p>
+        <div class="footer__social">
+            <a href="https://bodakalyansingh.github.io/kalyansinghworksin.github.io/" class="footer__icon"><i class='bx bxs-user-circle'></i></i></a>
+            <a href="https://github.com/BodaKalyanSingh" class="footer__icon"><i class='bx bxl-github'></i></a>
+            <a href="https://www.linkedin.com/in/boda-kalyan-singh-4954011a3/" class="footer__icon"><i class='bx bxl-linkedin'></i></a>
+            <a href="https://x.com/KalyanSinghNaik" class="footer__icon"><i class='bx bxl-twitter'></i></a>
+        </div>
+        <p class="footer__copy">&#169; bodakalyansingh. All rights reserved</p>
+    </footer>
+</body>
+</html>

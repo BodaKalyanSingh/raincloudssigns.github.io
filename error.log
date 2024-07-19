@@ -1,0 +1,56 @@
+Error processing upload
+Traceback (most recent call last):
+  File "C:\Users\kalya\OneDrive\Desktop\rainwebsite\app.py", line 251, in upload_file
+    file.save(file_path)
+  File "C:\Users\kalya\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\datastructures\file_storage.py", line 125, in save
+    dst = open(dst, "wb")
+FileNotFoundError: [Errno 2] No such file or directory: 'img\\Ci-N001.jpg'
+Error processing upload
+Traceback (most recent call last):
+  File "C:\Users\kalya\OneDrive\Desktop\rainwebsite\app.py", line 247, in upload_file
+    file.save(file_path)
+  File "C:\Users\kalya\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\datastructures\file_storage.py", line 125, in save
+    dst = open(dst, "wb")
+FileNotFoundError: [Errno 2] No such file or directory: 'static/uploads\\clld.jpg'
+Error processing upload
+Traceback (most recent call last):
+  File "C:\Users\kalya\OneDrive\Desktop\rainwebsite\app.py", line 247, in upload_file
+    file.save(file_path)
+  File "C:\Users\kalya\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\datastructures\file_storage.py", line 125, in save
+    dst = open(dst, "wb")
+FileNotFoundError: [Errno 2] No such file or directory: 'static/uploads\\clld.jpg'
+Error processing upload
+Traceback (most recent call last):
+  File "C:\Users\kalya\OneDrive\Desktop\rainwebsite\app.py", line 247, in upload_file
+    file.save(file_path)
+  File "C:\Users\kalya\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\datastructures\file_storage.py", line 125, in save
+    dst = open(dst, "wb")
+FileNotFoundError: [Errno 2] No such file or directory: 'static/uploads\\Ci-N001.jpg'
+Error processing upload
+Traceback (most recent call last):
+  File "C:\Users\kalya\OneDrive\Desktop\rainwebsite\app.py", line 247, in upload_file
+    file.save(file_path)
+  File "C:\Users\kalya\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\datastructures\file_storage.py", line 125, in save
+    dst = open(dst, "wb")
+FileNotFoundError: [Errno 2] No such file or directory: 'static/uploads\\Ci-N001.jpg'
+Error processing upload
+Traceback (most recent call last):
+  File "C:\Users\kalya\OneDrive\Desktop\rainwebsite\app.py", line 247, in upload_file
+    file.save(file_path)
+  File "C:\Users\kalya\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\datastructures\file_storage.py", line 125, in save
+    dst = open(dst, "wb")
+FileNotFoundError: [Errno 2] No such file or directory: 'static/uploads\\Ns-N005.jpg'
+Error processing upload
+Traceback (most recent call last):
+  File "C:\Users\kalya\OneDrive\Desktop\rainwebsite\app.py", line 252, in upload_file
+    file.save(file_path)
+  File "C:\Users\kalya\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\datastructures\file_storage.py", line 125, in save
+    dst = open(dst, "wb")
+FileNotFoundError: [Errno 2] No such file or directory: 'static/uploads\\cld1.jpg'
+Error processing upload
+Traceback (most recent call last):
+  File "C:\Users\kalya\OneDrive\Desktop\rainwebsite\app.py", line 251, in upload_file
+    file.save(file_path)
+  File "C:\Users\kalya\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\datastructures\file_storage.py", line 125, in save
+    dst = open(dst, "wb")
+FileNotFoundError: [Errno 2] No such file or directory: 'img\\clld.jpg'
